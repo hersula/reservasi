@@ -1,0 +1,5 @@
+[27-Jan-2022 07:01:01 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): Connection refused in /home/norbumed/public_html_reservasi/connection.php on line 8
+[27-Jan-2022 07:01:01 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on bool in /home/norbumed/public_html_reservasi/admin/laboratorium/hasil-lab-pcr/save_input_hasil.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/norbumed/public_html_reservasi/admin/laboratorium/hasil-lab-pcr/save_input_hasil.php on line 21

@@ -1,0 +1,54 @@
+[21-Jan-2022 14:32:02 UTC] PHP Fatal error:  Uncaught Error: Class 'Picqer\Barcode\BarcodeGeneratorPNG' not found in /home/norbumed/public_html_reservasi/admin/laboratorium/print_barcode_lab.php:35
+Stack trace:
+#0 {main}
+  thrown in /home/norbumed/public_html_reservasi/admin/laboratorium/print_barcode_lab.php on line 35
+[23-Jan-2022 13:25:54 UTC] PHP Fatal error:  Uncaught Error: Object of class mysqli_result could not be converted to string in /home/norbumed/public_html_reservasi/admin/laboratorium/print_barcode_lab.php:53
+Stack trace:
+#0 {main}
+  thrown in /home/norbumed/public_html_reservasi/admin/laboratorium/print_barcode_lab.php on line 53
+[23-Jan-2022 13:26:10 UTC] PHP Fatal error:  Uncaught Error: Object of class mysqli_result could not be converted to string in /home/norbumed/public_html_reservasi/admin/laboratorium/print_barcode_lab.php:56
+Stack trace:
+#0 {main}
+  thrown in /home/norbumed/public_html_reservasi/admin/laboratorium/print_barcode_lab.php on line 56
+[23-Jan-2022 13:27:40 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Picqer\Barcode\BarcodeGenerator::getBarcodeData() must be of the type string, null given, called in /home/norbumed/public_html_reservasi/vendor/picqer/php-barcode-generator/src/BarcodeGeneratorPNG.php on line 54 and defined in /home/norbumed/public_html_reservasi/vendor/picqer/php-barcode-generator/src/BarcodeGenerator.php:97
+Stack trace:
+#0 /home/norbumed/public_html_reservasi/vendor/picqer/php-barcode-generator/src/BarcodeGeneratorPNG.php(54): Picqer\Barcode\BarcodeGenerator->getBarcodeData(NULL, 'C128')
+#1 /home/norbumed/public_html_reservasi/admin/laboratorium/print_barcode_lab.php(65): Picqer\Barcode\BarcodeGeneratorPNG->getBarcode(NULL, 'C128')
+#2 {main}
+  thrown in /home/norbumed/public_html_reservasi/vendor/picqer/php-barcode-generator/src/BarcodeGenerator.php on line 97
+[24-Jan-2022 12:50:45 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Picqer\Barcode\BarcodeGenerator::getBarcodeData() must be of the type string, null given, called in /home/norbumed/public_html_reservasi/vendor/picqer/php-barcode-generator/src/BarcodeGeneratorPNG.php on line 54 and defined in /home/norbumed/public_html_reservasi/vendor/picqer/php-barcode-generator/src/BarcodeGenerator.php:97
+Stack trace:
+#0 /home/norbumed/public_html_reservasi/vendor/picqer/php-barcode-generator/src/BarcodeGeneratorPNG.php(54): Picqer\Barcode\BarcodeGenerator->getBarcodeData(NULL, 'C128')
+#1 /home/norbumed/public_html_reservasi/admin/laboratorium/print_barcode_lab.php(63): Picqer\Barcode\BarcodeGeneratorPNG->getBarcode(NULL, 'C128')
+#2 {main}
+  thrown in /home/norbumed/public_html_reservasi/vendor/picqer/php-barcode-generator/src/BarcodeGenerator.php on line 97
+[24-Jan-2022 12:50:47 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Picqer\Barcode\BarcodeGenerator::getBarcodeData() must be of the type string, null given, called in /home/norbumed/public_html_reservasi/vendor/picqer/php-barcode-generator/src/BarcodeGeneratorPNG.php on line 54 and defined in /home/norbumed/public_html_reservasi/vendor/picqer/php-barcode-generator/src/BarcodeGenerator.php:97
+Stack trace:
+#0 /home/norbumed/public_html_reservasi/vendor/picqer/php-barcode-generator/src/BarcodeGeneratorPNG.php(54): Picqer\Barcode\BarcodeGenerator->getBarcodeData(NULL, 'C128')
+#1 /home/norbumed/public_html_reservasi/admin/laboratorium/print_barcode_lab.php(63): Picqer\Barcode\BarcodeGeneratorPNG->getBarcode(NULL, 'C128')
+#2 {main}
+  thrown in /home/norbumed/public_html_reservasi/vendor/picqer/php-barcode-generator/src/BarcodeGenerator.php on line 97
+[24-Jan-2022 12:50:48 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Picqer\Barcode\BarcodeGenerator::getBarcodeData() must be of the type string, null given, called in /home/norbumed/public_html_reservasi/vendor/picqer/php-barcode-generator/src/BarcodeGeneratorPNG.php on line 54 and defined in /home/norbumed/public_html_reservasi/vendor/picqer/php-barcode-generator/src/BarcodeGenerator.php:97
+Stack trace:
+#0 /home/norbumed/public_html_reservasi/vendor/picqer/php-barcode-generator/src/BarcodeGeneratorPNG.php(54): Picqer\Barcode\BarcodeGenerator->getBarcodeData(NULL, 'C128')
+#1 /home/norbumed/public_html_reservasi/admin/laboratorium/print_barcode_lab.php(63): Picqer\Barcode\BarcodeGeneratorPNG->getBarcode(NULL, 'C128')
+#2 {main}
+  thrown in /home/norbumed/public_html_reservasi/vendor/picqer/php-barcode-generator/src/BarcodeGenerator.php on line 97
+[25-Jan-2022 10:37:09 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getBarcode() on null in /home/norbumed/public_html_reservasi/admin/laboratorium/print_barcode_lab.php:86
+Stack trace:
+#0 {main}
+  thrown in /home/norbumed/public_html_reservasi/admin/laboratorium/print_barcode_lab.php on line 86
+[31-Jan-2022 15:34:47 UTC] PHP Warning:  include(../../../connection.php): failed to open stream: No such file or directory in /home/norbumed/public_html_reservasi/admin/laboratorium/cancel_hasil.php on line 3
+[31-Jan-2022 15:34:47 UTC] PHP Warning:  include(../../../connection.php): failed to open stream: No such file or directory in /home/norbumed/public_html_reservasi/admin/laboratorium/cancel_hasil.php on line 3
+[31-Jan-2022 15:34:47 UTC] PHP Warning:  include(): Failed opening '../../../connection.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/norbumed/public_html_reservasi/admin/laboratorium/cancel_hasil.php on line 3
+[31-Jan-2022 15:38:40 UTC] PHP Warning:  include(../../../connection.php): failed to open stream: No such file or directory in /home/norbumed/public_html_reservasi/admin/laboratorium/cancel_hasil.php on line 3
+[31-Jan-2022 15:38:40 UTC] PHP Warning:  include(../../../connection.php): failed to open stream: No such file or directory in /home/norbumed/public_html_reservasi/admin/laboratorium/cancel_hasil.php on line 3
+[31-Jan-2022 15:38:40 UTC] PHP Warning:  include(): Failed opening '../../../connection.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/norbumed/public_html_reservasi/admin/laboratorium/cancel_hasil.php on line 3
+[04-Feb-2022 10:08:18 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/norbumed/public_html_reservasi/admin/laboratorium/generate_multiple_barcodelab.php:59
+Stack trace:
+#0 {main}
+  thrown in /home/norbumed/public_html_reservasi/admin/laboratorium/generate_multiple_barcodelab.php on line 59
+[04-Feb-2022 10:08:49 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/norbumed/public_html_reservasi/admin/laboratorium/generate_multiple_barcodelab.php:59
+Stack trace:
+#0 {main}
+  thrown in /home/norbumed/public_html_reservasi/admin/laboratorium/generate_multiple_barcodelab.php on line 59

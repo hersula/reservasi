@@ -1,0 +1,29 @@
+[03-Feb-2022 07:28:05 UTC] PHP Warning:  imagepng(temp/QRCode_c7b16b7651dbffe9b02ecc95fb6ddd63pasien_3057https://reservasi.norbumedika.id/PDF/hasil_pasien.php?idTransac.png): failed to open stream: No such file or directory in /home/norbumed/public_html_reservasi/phpqrcode/qrimage.php on line 43
+[04-Feb-2022 04:55:29 UTC] PHP Warning:  imagepng(temp/QRCode_741c7addaf420f6996821da6ae5be9capasien_3931 Bilamana Anda membuka alamat diatas menggunakan ponsel tipe ANDROID, maka hasil test akan langsung terunduh ke dalam folder Document / Download di ponsel Anda.png): failed to open stream: No such file or directory in /home/norbumed/public_html_reservasi/phpqrcode/qrimage.php on line 43
+[06-Feb-2022 04:26:51 UTC] PHP Warning:  imagepng(temp/QRCode_6effd7e536a3a65ba6995250da15eeffpasien_5470 Bilamana Anda membuka alamat diatas menggunakan ponsel tipe ANDROID, maka hasil test akan langsung terunduh ke dalam folder Document / Download di ponsel Anda.png): failed to open stream: No such file or directory in /home/norbumed/public_html_reservasi/phpqrcode/qrimage.php on line 43
+[06-Feb-2022 08:27:42 UTC] PHP Warning:  imagepng(temp/QRCode_5b89e8fb76834c71688c5799a8180775pasien_1460https://reservasi.norbumedika.id/.png): failed to open stream: No such file or directory in /home/norbumed/public_html_reservasi/phpqrcode/qrimage.php on line 43
+[08-Feb-2022 11:10:50 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/norbumed/public_html_reservasi/PDF/hasil_pasien.php:187
+Stack trace:
+#0 {main}
+  thrown in /home/norbumed/public_html_reservasi/PDF/hasil_pasien.php on line 187
+[08-Feb-2022 11:10:54 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/norbumed/public_html_reservasi/PDF/hasil_pasien.php:187
+Stack trace:
+#0 {main}
+  thrown in /home/norbumed/public_html_reservasi/PDF/hasil_pasien.php on line 187
+[09-Feb-2022 22:51:23 UTC] PHP Warning:  imagepng(temp/QRCode_0eaa82043aa151348123176284612a89pasien_8018https://reservasi.norbumedika.id/PDF/hasil_pasien.php?idTransaction=2202098801.png): failed to open stream: No such file or directory in /home/norbumed/public_html_reservasi/phpqrcode/qrimage.php on line 43
+[09-Feb-2022 22:51:28 UTC] PHP Warning:  imagepng(temp/QRCode_0eaa82043aa151348123176284612a89pasien_8018https://reservasi.norbumedika.png): failed to open stream: No such file or directory in /home/norbumed/public_html_reservasi/phpqrcode/qrimage.php on line 43
+[09-Feb-2022 22:51:31 UTC] PHP Warning:  imagepng(temp/QRCode_0eaa82043aa151348123176284612a89pasien_8018https://reservall.png): failed to open stream: No such file or directory in /home/norbumed/public_html_reservasi/phpqrcode/qrimage.php on line 43
+[10-Feb-2022 01:50:13 UTC] PHP Warning:  imagepng(temp/QRCode_6c42f16086c43c79e382c7bd16540668pasien_8484://reservasi.norbumedika.id/PDF/hasil_pasien.php?idTransaction=2.png): failed to open stream: No such file or directory in /home/norbumed/public_html_reservasi/phpqrcode/qrimage.php on line 43
+[12-Feb-2022 11:11:18 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): No such file or directory in /home/norbumed/public_html_reservasi/connection.php on line 8
+[12-Feb-2022 11:11:18 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/norbumed/public_html_reservasi/PDF/hasil_pasien.php on line 7
+[12-Feb-2022 11:11:19 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on bool in /home/norbumed/public_html_reservasi/PDF/hasil_pasien.php:192
+Stack trace:
+#0 {main}
+  thrown in /home/norbumed/public_html_reservasi/PDF/hasil_pasien.php on line 192
+[13-Feb-2022 01:56:26 UTC] PHP Warning:  imagepng(temp/QRCode_0d1c49fd0bb70a05c1d5489b84798b66pasien_7069Gunakan tanggal lahir Anda dalam bentuk DDMM (dua digit tanggal lahir dan dua digit bulan) untuk membuka file tersebut.Bilamana Anda membuka alamat diatas menggunakan ponsel tipe ANDROID, maka hasil test akan langsung terunduh ke dalam folder Document / Download di ponsel Anda.png): failed to open stream: File name too long in /home/norbumed/public_html_reservasi/phpqrcode/qrimage.php on line 43
+[15-Feb-2022 10:21:05 UTC] PHP Warning:  imagepng(temp/QRCode_42c1c99ca174309187a00aec9572e92dpasien_11113Gunakan tanggal lahir Anda dalam bentuk DDMM (dua digit tanggal lahir dan dua digit bulan) untuk membuka file tersebut.Bilamana Anda membuka alamat diatas menggunakan ponsel tipe ANDROID, maka hasil test akan langsung terunduh ke dalam folder Document / Download di ponsel Anda.png): failed to open stream: File name too long in /home/norbumed/public_html_reservasi/phpqrcode/qrimage.php on line 43
+[23-Feb-2022 09:16:05 UTC] PHP Warning:  file_get_contents(https://reservasi.norbumedika.id/images/new_qr_doctor): failed to open stream: Connection timed out in /home/norbumed/public_html_reservasi/vendor/mpdf/mpdf/src/Image/ImageProcessor.php on line 219
+[24-Feb-2022 18:33:53 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/norbumed/public_html_reservasi/PDF/hasil_pasien.php:200
+Stack trace:
+#0 {main}
+  thrown in /home/norbumed/public_html_reservasi/PDF/hasil_pasien.php on line 200

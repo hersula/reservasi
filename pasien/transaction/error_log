@@ -1,0 +1,20 @@
+[06-Feb-2022 01:03:48 UTC] PHP Fatal error:  Uncaught Exception: Midtrans API is returning API error. HTTP status code: 400 API response: {"error_messages":["order_id not unique"]} in /home/norbumed/public_html_reservasi/midtrans/midtrans-php/Midtrans/ApiRequestor.php:167
+Stack trace:
+#0 /home/norbumed/public_html_reservasi/midtrans/midtrans-php/Midtrans/ApiRequestor.php(39): Midtrans\ApiRequestor::remoteCall('https://app.mid...', 'Mid-server-BvxO...', Array, 'POST')
+#1 /home/norbumed/public_html_reservasi/midtrans/midtrans-php/Midtrans/Snap.php(111): Midtrans\ApiRequestor::post('https://app.mid...', 'Mid-server-BvxO...', Array)
+#2 /home/norbumed/public_html_reservasi/midtrans/midtrans-php/Midtrans/Snap.php(36): Midtrans\Snap::createTransaction(Array)
+#3 /home/norbumed/public_html_reservasi/pasien/transaction/checkout.php(121): Midtrans\Snap::getSnapToken(Array)
+#4 {main}
+  thrown in /home/norbumed/public_html_reservasi/midtrans/midtrans-php/Midtrans/ApiRequestor.php on line 167
+[09-Feb-2022 06:13:28 UTC] PHP Warning:  mktime() expects parameter 3 to be int, string given in /home/norbumed/public_html_reservasi/pasien/transaction/checkout.php on line 65
+[09-Feb-2022 08:23:05 UTC] PHP Warning:  mktime() expects parameter 3 to be int, string given in /home/norbumed/public_html_reservasi/pasien/transaction/checkout.php on line 65
+[12-Feb-2022 04:04:10 UTC] PHP Warning:  mktime() expects parameter 3 to be int, string given in /home/norbumed/public_html_reservasi/pasien/transaction/checkout.php on line 75
+[12-Feb-2022 04:04:49 UTC] PHP Warning:  mktime() expects parameter 3 to be int, string given in /home/norbumed/public_html_reservasi/pasien/transaction/checkout.php on line 75
+[12-Feb-2022 04:05:10 UTC] PHP Warning:  mktime() expects parameter 3 to be int, string given in /home/norbumed/public_html_reservasi/pasien/transaction/checkout.php on line 75
+[14-Feb-2022 05:45:27 UTC] PHP Warning:  mktime() expects parameter 3 to be int, string given in /home/norbumed/public_html_reservasi/pasien/transaction/checkout.php on line 75
+[18-Feb-2022 03:34:36 UTC] PHP Warning:  mktime() expects parameter 3 to be int, string given in /home/norbumed/public_html_reservasi/pasien/transaction/checkout.php on line 75
+[21-Feb-2022 01:20:02 UTC] PHP Warning:  mktime() expects parameter 3 to be int, string given in /home/norbumed/public_html_reservasi/pasien/transaction/checkout.php on line 75
+[21-Feb-2022 01:20:03 UTC] PHP Warning:  mktime() expects parameter 3 to be int, string given in /home/norbumed/public_html_reservasi/pasien/transaction/checkout.php on line 75
+[21-Feb-2022 01:20:03 UTC] PHP Warning:  mktime() expects parameter 3 to be int, string given in /home/norbumed/public_html_reservasi/pasien/transaction/checkout.php on line 75
+[24-Feb-2022 10:53:31 UTC] PHP Warning:  mktime() expects parameter 3 to be int, string given in /home/norbumed/public_html_reservasi/pasien/transaction/checkout.php on line 75
+[24-Feb-2022 10:53:49 UTC] PHP Warning:  mktime() expects parameter 3 to be int, string given in /home/norbumed/public_html_reservasi/pasien/transaction/checkout.php on line 75

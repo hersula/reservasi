@@ -1,0 +1,47 @@
+[14-Jan-2022 12:37:07 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function grandTotal(), 3 passed in /home/norbumed/public_html_reservasi/admin/reservasi/back_proses_pendaftaran.php on line 144 and exactly 4 expected in /home/norbumed/public_html_reservasi/admin/reservasi/back_proses_pendaftaran.php:100
+Stack trace:
+#0 /home/norbumed/public_html_reservasi/admin/reservasi/back_proses_pendaftaran.php(144): grandTotal('5', 0, 0)
+#1 {main}
+  thrown in /home/norbumed/public_html_reservasi/admin/reservasi/back_proses_pendaftaran.php on line 100
+[14-Jan-2022 12:37:45 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function grandTotal(), 3 passed in /home/norbumed/public_html_reservasi/admin/reservasi/back_proses_pendaftaran.php on line 144 and exactly 4 expected in /home/norbumed/public_html_reservasi/admin/reservasi/back_proses_pendaftaran.php:100
+Stack trace:
+#0 /home/norbumed/public_html_reservasi/admin/reservasi/back_proses_pendaftaran.php(144): grandTotal('5', 0, 0)
+#1 {main}
+  thrown in /home/norbumed/public_html_reservasi/admin/reservasi/back_proses_pendaftaran.php on line 100
+[20-Jan-2022 13:14:59 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/norbumed/public_html_reservasi/admin/reservasi/change_outlet.php:8) in /home/norbumed/public_html_reservasi/admin/reservasi/change_outlet.php on line 14
+[27-Jan-2022 03:46:55 UTC] PHP Fatal error:  Cannot redeclare BalikTanggal() (previously declared in /home/norbumed/public_html_reservasi/connection.php:15) in /home/norbumed/public_html_reservasi/connection.php on line 15
+[27-Jan-2022 03:47:06 UTC] PHP Fatal error:  Cannot redeclare BalikTanggal() (previously declared in /home/norbumed/public_html_reservasi/connection.php:15) in /home/norbumed/public_html_reservasi/connection.php on line 15
+[27-Jan-2022 03:49:01 UTC] PHP Fatal error:  Cannot redeclare BalikTanggal() (previously declared in /home/norbumed/public_html_reservasi/connection.php:15) in /home/norbumed/public_html_reservasi/connection.php on line 15
+[27-Jan-2022 03:49:57 UTC] PHP Fatal error:  Cannot redeclare BalikTanggal() (previously declared in /home/norbumed/public_html_reservasi/connection.php:15) in /home/norbumed/public_html_reservasi/connection.php on line 15
+[27-Jan-2022 03:50:43 UTC] PHP Fatal error:  Cannot redeclare BalikTanggal() (previously declared in /home/norbumed/public_html_reservasi/connection.php:15) in /home/norbumed/public_html_reservasi/connection.php on line 15
+[27-Jan-2022 03:51:46 UTC] PHP Fatal error:  Cannot redeclare BalikTanggal() (previously declared in /home/norbumed/public_html_reservasi/connection.php:15) in /home/norbumed/public_html_reservasi/connection.php on line 15
+[27-Jan-2022 03:52:11 UTC] PHP Fatal error:  Cannot redeclare BalikTanggal() (previously declared in /home/norbumed/public_html_reservasi/connection.php:15) in /home/norbumed/public_html_reservasi/connection.php on line 15
+[27-Jan-2022 03:54:30 UTC] PHP Fatal error:  Cannot redeclare BalikTanggal() (previously declared in /home/norbumed/public_html_reservasi/connection.php:15) in /home/norbumed/public_html_reservasi/connection.php on line 15
+[27-Jan-2022 03:55:21 UTC] PHP Fatal error:  Cannot redeclare BalikTanggal() (previously declared in /home/norbumed/public_html_reservasi/connection.php:15) in /home/norbumed/public_html_reservasi/connection.php on line 15
+[27-Jan-2022 03:56:27 UTC] PHP Fatal error:  Cannot redeclare BalikTanggal() (previously declared in /home/norbumed/public_html_reservasi/connection.php:15) in /home/norbumed/public_html_reservasi/connection.php on line 15
+[27-Jan-2022 03:59:24 UTC] PHP Fatal error:  Cannot redeclare BalikTanggal() (previously declared in /home/norbumed/public_html_reservasi/connection.php:15) in /home/norbumed/public_html_reservasi/connection.php on line 15
+[27-Jan-2022 03:59:26 UTC] PHP Fatal error:  Cannot redeclare BalikTanggal() (previously declared in /home/norbumed/public_html_reservasi/connection.php:15) in /home/norbumed/public_html_reservasi/connection.php on line 15
+[27-Jan-2022 03:59:57 UTC] PHP Fatal error:  Cannot redeclare BalikTanggal() (previously declared in /home/norbumed/public_html_reservasi/connection.php:15) in /home/norbumed/public_html_reservasi/connection.php on line 15
+[27-Jan-2022 03:59:58 UTC] PHP Fatal error:  Cannot redeclare BalikTanggal() (previously declared in /home/norbumed/public_html_reservasi/connection.php:15) in /home/norbumed/public_html_reservasi/connection.php on line 15
+[27-Jan-2022 03:59:59 UTC] PHP Fatal error:  Cannot redeclare BalikTanggal() (previously declared in /home/norbumed/public_html_reservasi/connection.php:15) in /home/norbumed/public_html_reservasi/connection.php on line 15
+[27-Jan-2022 03:59:59 UTC] PHP Fatal error:  Cannot redeclare BalikTanggal() (previously declared in /home/norbumed/public_html_reservasi/connection.php:15) in /home/norbumed/public_html_reservasi/connection.php on line 15
+[27-Jan-2022 04:00:01 UTC] PHP Fatal error:  Cannot redeclare BalikTanggal() (previously declared in /home/norbumed/public_html_reservasi/connection.php:15) in /home/norbumed/public_html_reservasi/connection.php on line 15
+[27-Jan-2022 04:01:19 UTC] PHP Fatal error:  Cannot redeclare BalikTanggal() (previously declared in /home/norbumed/public_html_reservasi/connection.php:15) in /home/norbumed/public_html_reservasi/connection.php on line 15
+[27-Jan-2022 04:06:34 UTC] PHP Fatal error:  Cannot redeclare BalikTanggal() (previously declared in /home/norbumed/public_html_reservasi/connection.php:15) in /home/norbumed/public_html_reservasi/connection.php on line 15
+[27-Jan-2022 04:06:35 UTC] PHP Fatal error:  Cannot redeclare BalikTanggal() (previously declared in /home/norbumed/public_html_reservasi/connection.php:15) in /home/norbumed/public_html_reservasi/connection.php on line 15
+[27-Jan-2022 04:06:41 UTC] PHP Fatal error:  Cannot redeclare BalikTanggal() (previously declared in /home/norbumed/public_html_reservasi/connection.php:15) in /home/norbumed/public_html_reservasi/connection.php on line 15
+[27-Jan-2022 04:06:43 UTC] PHP Fatal error:  Cannot redeclare BalikTanggal() (previously declared in /home/norbumed/public_html_reservasi/connection.php:15) in /home/norbumed/public_html_reservasi/connection.php on line 15
+[27-Jan-2022 04:08:39 UTC] PHP Fatal error:  Cannot redeclare BalikTanggal() (previously declared in /home/norbumed/public_html_reservasi/connection.php:15) in /home/norbumed/public_html_reservasi/connection.php on line 15
+[27-Jan-2022 04:08:53 UTC] PHP Fatal error:  Cannot redeclare BalikTanggal() (previously declared in /home/norbumed/public_html_reservasi/connection.php:15) in /home/norbumed/public_html_reservasi/connection.php on line 15
+[24-Feb-2022 02:58:48 UTC] PHP Warning:  mysqli::query(): (40001/1213): Deadlock found when trying to get lock; try restarting transaction in /home/norbumed/public_html_reservasi/admin/reservasi/back_proses_pendaftaran.php on line 26
+[24-Feb-2022 02:58:48 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/norbumed/public_html_reservasi/admin/reservasi/back_proses_pendaftaran.php:28
+Stack trace:
+#0 /home/norbumed/public_html_reservasi/admin/reservasi/back_proses_pendaftaran.php(207): format_id_transaction('PLUIT', '2')
+#1 {main}
+  thrown in /home/norbumed/public_html_reservasi/admin/reservasi/back_proses_pendaftaran.php on line 28
+[25-Feb-2022 10:20:42 UTC] PHP Warning:  mysqli::query(): (40001/1213): Deadlock found when trying to get lock; try restarting transaction in /home/norbumed/public_html_reservasi/admin/reservasi/back_proses_pendaftaran.php on line 26
+[25-Feb-2022 10:20:42 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/norbumed/public_html_reservasi/admin/reservasi/back_proses_pendaftaran.php:28
+Stack trace:
+#0 /home/norbumed/public_html_reservasi/admin/reservasi/back_proses_pendaftaran.php(207): format_id_transaction('B FAS', '10')
+#1 {main}
+  thrown in /home/norbumed/public_html_reservasi/admin/reservasi/back_proses_pendaftaran.php on line 28

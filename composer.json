@@ -1,0 +1,11 @@
+{
+    "require": {
+        "phpmailer/phpmailer": "^6.5",
+        "picqer/php-barcode-generator": "^2.2",
+        "mpdf/mpdf": "^8.0",
+        "endroid/qr-code": "^4.4"
+    },
+    "config": {
+        "platform-check": false
+    }
+}

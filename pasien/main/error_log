@@ -1,0 +1,33 @@
+[06-Jan-2022 06:36:11 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/norbumed/public_html_reservasi/pasien/main/page/invoice.php on line 173
+[06-Jan-2022 06:36:17 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/norbumed/public_html_reservasi/pasien/main/page/invoice.php on line 173
+[11-Jan-2022 12:37:22 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/norbumed/public_html_reservasi/pasien/transaction/location_outlet.php on line 40
+[11-Jan-2022 12:37:24 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/norbumed/public_html_reservasi/pasien/transaction/location_outlet.php on line 40
+[20-Jan-2022 11:11:30 UTC] PHP Warning:  Use of undefined constant Y - assumed 'Y' (this will throw an Error in a future version of PHP) in /home/norbumed/public_html_reservasi/pasien/transaction/cart_page.php on line 87
+[20-Jan-2022 11:11:30 UTC] PHP Warning:  Use of undefined constant m - assumed 'm' (this will throw an Error in a future version of PHP) in /home/norbumed/public_html_reservasi/pasien/transaction/cart_page.php on line 87
+[20-Jan-2022 11:11:30 UTC] PHP Warning:  A non-numeric value encountered in /home/norbumed/public_html_reservasi/pasien/transaction/cart_page.php on line 87
+[20-Jan-2022 11:11:30 UTC] PHP Warning:  A non-numeric value encountered in /home/norbumed/public_html_reservasi/pasien/transaction/cart_page.php on line 87
+[20-Jan-2022 11:11:30 UTC] PHP Warning:  Use of undefined constant d - assumed 'd' (this will throw an Error in a future version of PHP) in /home/norbumed/public_html_reservasi/pasien/transaction/cart_page.php on line 87
+[20-Jan-2022 11:11:30 UTC] PHP Warning:  A non-numeric value encountered in /home/norbumed/public_html_reservasi/pasien/transaction/cart_page.php on line 87
+[20-Jan-2022 11:12:09 UTC] PHP Warning:  Use of undefined constant Y - assumed 'Y' (this will throw an Error in a future version of PHP) in /home/norbumed/public_html_reservasi/pasien/transaction/cart_page.php on line 87
+[20-Jan-2022 11:12:09 UTC] PHP Warning:  Use of undefined constant m - assumed 'm' (this will throw an Error in a future version of PHP) in /home/norbumed/public_html_reservasi/pasien/transaction/cart_page.php on line 87
+[20-Jan-2022 11:12:09 UTC] PHP Warning:  A non-numeric value encountered in /home/norbumed/public_html_reservasi/pasien/transaction/cart_page.php on line 87
+[20-Jan-2022 11:12:09 UTC] PHP Warning:  A non-numeric value encountered in /home/norbumed/public_html_reservasi/pasien/transaction/cart_page.php on line 87
+[20-Jan-2022 11:12:09 UTC] PHP Warning:  Use of undefined constant d - assumed 'd' (this will throw an Error in a future version of PHP) in /home/norbumed/public_html_reservasi/pasien/transaction/cart_page.php on line 87
+[20-Jan-2022 11:12:09 UTC] PHP Warning:  A non-numeric value encountered in /home/norbumed/public_html_reservasi/pasien/transaction/cart_page.php on line 87
+[01-Feb-2022 00:46:46 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/norbumed/public_html_reservasi/pasien/main/page/package_tes.php on line 27
+[01-Feb-2022 05:08:26 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/norbumed/public_html_reservasi/pasien/main/page/package_tes.php on line 27
+[01-Feb-2022 08:16:55 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/norbumed/public_html_reservasi/pasien/main/page/package_tes.php on line 27
+[04-Feb-2022 05:51:11 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/norbumed/public_html_reservasi/pasien/main/page/package_tes.php on line 27
+[05-Feb-2022 06:05:12 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/norbumed/public_html_reservasi/pasien/main/page/package_tes.php on line 27
+[05-Feb-2022 07:40:06 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/norbumed/public_html_reservasi/pasien/main/page/package_tes.php on line 27
+[06-Feb-2022 01:03:40 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/norbumed/public_html_reservasi/pasien/main/page/package_tes.php on line 27
+[07-Feb-2022 15:11:21 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/norbumed/public_html_reservasi/pasien/main/page/package_tes.php on line 27
+[10-Feb-2022 14:30:44 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/norbumed/public_html_reservasi/pasien/main/page/package_tes.php on line 27
+[11-Feb-2022 03:58:36 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/norbumed/public_html_reservasi/pasien/main/page/package_tes.php on line 27
+[11-Feb-2022 07:18:41 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/norbumed/public_html_reservasi/pasien/main/page/package_tes.php on line 27
+[11-Feb-2022 10:02:04 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/norbumed/public_html_reservasi/pasien/main/page/package_tes.php on line 27
+[11-Feb-2022 13:44:21 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/norbumed/public_html_reservasi/pasien/main/page/package_tes.php on line 27
+[16-Feb-2022 03:25:53 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/norbumed/public_html_reservasi/pasien/main/page/package_tes.php on line 27
+[19-Feb-2022 12:18:25 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/norbumed/public_html_reservasi/pasien/main/page/package_tes.php on line 27
+[19-Feb-2022 12:52:21 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/norbumed/public_html_reservasi/pasien/main/page/package_tes.php on line 27
+[23-Feb-2022 18:47:29 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/norbumed/public_html_reservasi/pasien/main/page/package_tes.php on line 27

@@ -1,0 +1,2 @@
+[08-Feb-2022 07:00:15 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/norbumed/public_html_reservasi/register.php on line 192
+[08-Feb-2022 07:00:15 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/norbumed/public_html_reservasi/register.php on line 193

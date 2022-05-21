@@ -1,0 +1,48 @@
+[13-Jan-2022 12:48:35 UTC] PHP Fatal error:  Uncaught Exception: Midtrans API is returning API error. HTTP status code: 404 API response: <!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+
+    <!-- Responsive viewport declaration -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Cross compatibility -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Midtrans</title>
+    <meta name="description" content=""/>
+
+    <link rel="stylesheet" href="//v2/assets/css/all.css"/>
+
+</head>
+<body>
+<div class="container">
+    <div class="center desc"><p>404</p></div>
+    <div class="center click"><h3>
+        <a href="#">&#45; Ups &#45;</a>
+    </h3></div>
+</div>
+<footer>
+    <p class="center">&copy; <script>document.write(new Date().getFullYear())</script> PT Midtrans. All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
+ in /home/norbumed/public_html_reservasi/midtrans/midtrans-php/Midtrans/ApiRequestor.php:167
+Stack trace:
+#0 /home/norbumed/public_html_reservasi/midtrans/midtra in /home/norbumed/public_html_reservasi/midtrans/midtrans-php/Midtrans/ApiRequestor.php on line 167
+[27-Jan-2022 10:48:46 UTC] PHP Fatal error:  Uncaught Exception: Midtrans API is returning API error. HTTP status code: 404 API response: {"status_code":"404","status_message":"Transaction doesn't exist.","id":"09f9dd8f-1ab6-480f-a6ce-644f757fa8c0"} in /home/norbumed/public_html_reservasi/midtrans/midtrans-php/Midtrans/ApiRequestor.php:165
+Stack trace:
+#0 /home/norbumed/public_html_reservasi/midtrans/midtrans-php/Midtrans/ApiRequestor.php(25): Midtrans\ApiRequestor::remoteCall('https://api.mid...', 'Mid-server-BvxO...', false, 'GET')
+#1 /home/norbumed/public_html_reservasi/midtrans/midtrans-php/Midtrans/Transaction.php(25): Midtrans\ApiRequestor::get('https://api.mid...', 'Mid-server-BvxO...', false)
+#2 /home/norbumed/public_html_reservasi/midtrans/midtrans-php/Midtrans/Notification.php(26): Midtrans\Transaction::status('5420c9b5-9021-4...')
+#3 /home/norbumed/public_html_reservasi/midtrans/notifications.php(9): Midtrans\Notification->__construct()
+#4 {main}
+  thrown in /home/norbumed/public_html_reservasi/midtrans/midtrans-php/Midtrans/ApiRequestor.php on line 165
+[27-Jan-2022 10:50:19 UTC] PHP Fatal error:  Uncaught Exception: Midtrans API is returning API error. HTTP status code: 404 API response: {"status_code":"404","status_message":"Transaction doesn't exist.","id":"397a93bd-9638-46e0-8e1c-6503f98af827"} in /home/norbumed/public_html_reservasi/midtrans/midtrans-php/Midtrans/ApiRequestor.php:165
+Stack trace:
+#0 /home/norbumed/public_html_reservasi/midtrans/midtrans-php/Midtrans/ApiRequestor.php(25): Midtrans\ApiRequestor::remoteCall('https://api.mid...', 'Mid-server-BvxO...', false, 'GET')
+#1 /home/norbumed/public_html_reservasi/midtrans/midtrans-php/Midtrans/Transaction.php(25): Midtrans\ApiRequestor::get('https://api.mid...', 'Mid-server-BvxO...', false)
+#2 /home/norbumed/public_html_reservasi/midtrans/midtrans-php/Midtrans/Notification.php(26): Midtrans\Transaction::status('5420c9b5-9021-4...')
+#3 /home/norbumed/public_html_reservasi/midtrans/notifications.php(9): Midtrans\Notification->__construct()
+#4 {main}
+  thrown in /home/norbumed/public_html_reservasi/midtrans/midtrans-php/Midtrans/ApiRequestor.php on line 165
