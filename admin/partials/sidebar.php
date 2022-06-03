@@ -146,7 +146,7 @@ $arrayRoleName = $_SESSION['rolesName'];
         <?php
         } ?>
         <?php if ($isFaskes['isFaskes'] != '1' && in_array('Superadmin', $arrayRoleName)) { ?>
-          <li class="nav-item <?php if ($_GET['page'] == 'roles-data' || $_GET['page'] == 'tambah-roles-data' || $_GET['page'] == 'ubah-roles-data' || $_GET['page'] == 'hapus-roles-data' || $_GET['page'] == 'lihat-roles-data' || $_GET['page'] == 'outlet-data' || $_GET['page'] == 'tambah-outlet-data' || $_GET['page'] == 'ubah-outlet-data' || $_GET['page'] == 'hapus-outlet-data' || $_GET['page'] == 'lihat-outlet-data' || $_GET['page'] == 'tindakan-data' || $_GET['page'] == 'tambah-tindakan-data' || $_GET['page'] == 'ubah-tindakan-data' ||  $_GET['page'] == 'hapus-tindakan-data' || $_GET['page'] == 'lihat-tindakan-data' ||  $_GET['page'] == 'master-pasien-data' || $_GET['page'] == 'ubah-pasien-data' || $_GET['page'] == 'hapus-pasien-data' || $_GET['page'] == 'lihat-pasien-data' || $_GET['page'] == 'karyawan-data' || $_GET['page'] == 'tambah-karyawan-data' ||  $_GET['page'] == 'ubah-karyawan-data' ||  $_GET['page'] == 'hapus-karyawan-data' || $_GET['page'] == 'lihat-karyawan-data' || $_GET['page'] == 'target-gen-data' || $_GET['page'] == 'tambah-target-gen-data' || $_GET['page'] == 'ubah-target-gen-data' ||  $_GET['page'] == 'hapus-target-gen-data' ||  $_GET['page'] == 'lihat-target-gen-data' ||  $_GET['page'] == 'reagen-data' || $_GET['page'] == 'tambah-reagen-data' || $_GET['page'] == 'ubah-reagen-data' || $_GET['page'] == 'hapus-reagen-data' || $_GET['page'] == 'lihat-reagen-data' || $_GET['page'] == 'master-hasil-tes-data' || $_GET['page'] == 'ubah-hasil-tes-data' || $_GET['page'] == 'lihat-hasil-tes-data' || $_GET['page'] == 'tipe-klien-data' ||  $_GET['page'] == 'tambah-tipe-klien-data' ||  $_GET['page'] == 'ubah-tipe-klien-data' ||  $_GET['page'] == 'hapus-tipe-klien-data' ||  $_GET['page'] == 'lihat-tipe-klien-data' || $_GET['page'] == 'klien-data' || $_GET['page'] == 'tambah-klien-data' || $_GET['page'] == 'ubah-klien-data' || $_GET['page'] == 'hapus-klien-data' || $_GET['page'] == 'lihat-klien-data' || $_GET['page'] == 'tipe-pembayaran-data' || $_GET['page'] == 'tambah-tipe-pembayaran-data' || $_GET['page'] == 'lihat-tipe-pembayaran-data') {
+          <li class="nav-item <?php if ($_GET['page'] == 'roles-data' || $_GET['page'] == 'tambah-roles-data' || $_GET['page'] == 'ubah-roles-data' || $_GET['page'] == 'hapus-roles-data' || $_GET['page'] == 'lihat-roles-data' || $_GET['page'] == 'kategori-data' || $_GET['page'] == 'lihat-kategori-data' || $_GET['page'] == 'outlet-data' || $_GET['page'] == 'tambah-outlet-data' || $_GET['page'] == 'ubah-outlet-data' || $_GET['page'] == 'hapus-outlet-data' || $_GET['page'] == 'lihat-outlet-data' || $_GET['page'] == 'tindakan-data' || $_GET['page'] == 'tambah-tindakan-data' || $_GET['page'] == 'ubah-tindakan-data' ||  $_GET['page'] == 'hapus-tindakan-data' || $_GET['page'] == 'lihat-tindakan-data' ||  $_GET['page'] == 'master-pasien-data' || $_GET['page'] == 'ubah-pasien-data' || $_GET['page'] == 'hapus-pasien-data' || $_GET['page'] == 'lihat-pasien-data' || $_GET['page'] == 'karyawan-data' || $_GET['page'] == 'tambah-karyawan-data' ||  $_GET['page'] == 'ubah-karyawan-data' ||  $_GET['page'] == 'hapus-karyawan-data' || $_GET['page'] == 'lihat-karyawan-data' || $_GET['page'] == 'target-gen-data' || $_GET['page'] == 'tambah-target-gen-data' || $_GET['page'] == 'ubah-target-gen-data' ||  $_GET['page'] == 'hapus-target-gen-data' ||  $_GET['page'] == 'lihat-target-gen-data' ||  $_GET['page'] == 'reagen-data' || $_GET['page'] == 'tambah-reagen-data' || $_GET['page'] == 'ubah-reagen-data' || $_GET['page'] == 'hapus-reagen-data' || $_GET['page'] == 'lihat-reagen-data' || $_GET['page'] == 'master-hasil-tes-data' || $_GET['page'] == 'ubah-hasil-tes-data' || $_GET['page'] == 'lihat-hasil-tes-data' || $_GET['page'] == 'tipe-klien-data' ||  $_GET['page'] == 'tambah-tipe-klien-data' ||  $_GET['page'] == 'ubah-tipe-klien-data' ||  $_GET['page'] == 'hapus-tipe-klien-data' ||  $_GET['page'] == 'lihat-tipe-klien-data' || $_GET['page'] == 'klien-data' || $_GET['page'] == 'tambah-klien-data' || $_GET['page'] == 'ubah-klien-data' || $_GET['page'] == 'hapus-klien-data' || $_GET['page'] == 'lihat-klien-data' || $_GET['page'] == 'tipe-pembayaran-data' || $_GET['page'] == 'tambah-tipe-pembayaran-data' || $_GET['page'] == 'lihat-tipe-pembayaran-data') {
                                 # code...
                                 echo 'menu-is-opening menu-open';
                               } ?>">
@@ -190,6 +190,24 @@ $arrayRoleName = $_SESSION['rolesName'];
                                                                       } ?>">
                   <i class="far fa-circle nav-icon"></i>
                     <p class="text-sm">Tindakan</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="admin.php?page=kategori-data" class="nav-link <?php if ($_GET['page'] == 'kategori-data') {
+                                                                        echo 'active';
+                                                                      } ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                    <p class="text-sm">Kategori Pemeriksaan</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="admin.php?page=pemeriksaan-data" class="nav-link <?php if ($_GET['page'] == 'pemeriksaan-data') {
+                                                                        echo 'active';
+                                                                      } ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                    <p class="text-sm">Pemeriksaan</p>
                 </a>
               </li>
             

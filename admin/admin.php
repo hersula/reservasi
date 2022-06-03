@@ -210,6 +210,36 @@ function titleDocument($page, $name, $date_report, $date_dashboard_report, $date
         case 'lihat-tindakan-data':
           include "master/lihat_Tindakan.php";
           break;
+        case 'kategori-data':
+          include "master/Katpemeriksaan.php";
+          break;
+        case 'tambah-kategori-data':
+          include "master/tambah_Katpemeriksaan.php";
+          break;
+        case 'ubah-kategori-data':
+          include "master/ubah_Katpemeriksaan.php";
+          break;
+        case 'hapus-kategori-data':
+          include "master/hapus_Katpemeriksaan.php";
+          break;
+        case 'lihat-kategori-data':
+          include "master/lihat_Katpemeriksaan.php";
+          break;
+        case 'pemeriksaan-data':
+          include "master/Pemeriksaan.php";
+          break;
+        case 'tambah-pemeriksaan-data':
+          include "master/tambah_Pemeriksaan.php";
+          break;
+        case 'ubah-pemeriksaan-data':
+          include "master/ubah_Pemeriksaan.php";
+          break;
+        case 'hapus-pemeriksaan-data':
+          include "master/hapus_Pemeriksaan.php";
+          break;
+        case 'lihat-pemeriksaan-data':
+          include "master/lihat_Pemeriksaan.php";
+          break;
         case 'master-pasien-data':
           include "master/Pasien.php";
           break;
@@ -365,6 +395,9 @@ function titleDocument($page, $name, $date_report, $date_dashboard_report, $date
           break;
         case 'ganti-password':
           include "utility/Ganti_Password.php";
+          break;
+        case 'pemeriksaan-kategori':
+          include "master/Tindakan.php";
           break;
         default:
           echo "<center><h3>Maaf. Halaman tidak di temukan !</h3></center>";
