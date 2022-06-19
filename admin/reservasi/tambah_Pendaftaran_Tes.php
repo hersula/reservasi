@@ -202,6 +202,37 @@ if($isFaskes['isFaskes'] == '1' || in_array("Faskes", $arrayRoleName)) {
                       </select>
                     </div>
                   </div>
+                  
+                  </div>                  
+
+                <!-- Penambahan Transaksi Lab -->
+                <div class="row">
+                  <h4 class="my-3">Data Transaksi Laboratorium</h4>
+                </div>  
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="text-sm">Pemeriksaan Lab <span class="text-warning">*</span></label>
+                      <select multiple="multiple" class="custom-select custom-select-sm" id="targetGenID" name="targetGenID[]" required onchange="getPrice()">
+                        <option value="">--Pilih Pemeriksaan Lab--</option>
+                        <?php
+                          $query= "select * from master_pemeriksaan where status='1'";
+                          $resultTargetGen = mysqli_query($conn,$query);
+                            while($rowTargetGen = mysqli_fetch_array($resultTargetGen)){
+                            ?> 
+                        <option value="<?php echo $rowTargetGen["id"]; ?>"
+                            <?php
+                              if($rowTargetGen["id"] == $targetGenID){
+                                echo "selected";
+                              } ?>
+                              ><?php echo $rowTargetGen["name"]; ?></option><?php
+                              }
+                            ?>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                  <div class="row">
                   <div class="col-md-2">
                     <div class="form-group">
                       <label class="text-sm">Diskon (Nominal) </label>
@@ -214,8 +245,6 @@ if($isFaskes['isFaskes'] == '1' || in_array("Faskes", $arrayRoleName)) {
                       <input type="number" class="form-control form-control-sm" id="tax" name="tax" onkeyup="testPrice()" />
                     </div>
                   </div>
-                  </div>
-                  <div class="row">
                       <div class="col-md-6">
                     <div class="form-group">
                       <label class="text-sm">Tipe Pembayaran <span class="text-warning">*</span></label>
@@ -236,59 +265,20 @@ if($isFaskes['isFaskes'] == '1' || in_array("Faskes", $arrayRoleName)) {
                       <input type="text" class="form-control form-control-sm" id="billTo" name="billTo" placeholder="Pembayaran Untuk" />
                     </div>
                   </div>
-                  </div>
-
-                <!-- Penambahan Transaksi Lab -->
-                <div class="row">
-                  <h4 class="my-3">Data Transaksi Laboratorium</h4>
-                </div>  
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label class="text-sm">Nama Outlet/Faskes <span class="text-warning">*</span></label>
-                      <select id="outletID" name="outletID" class="custom-select custom-select-sm outletID" required >
-                        <option value="">Pilih Outlet/Faskes</option>
-                        <?php
-                        $query = "SELECT * FROM master_outlet WHERE isFaskes='0'";
-                        $fetch = mysqli_query($conn, $query);
-                        while ($result = mysqli_fetch_array($fetch)) { ?>
-                          <?php if ($result['id'] == $outletID) { ?>
-                            <option value="<?= $result['id'] ?>" selected><?= $result['name'] ?></option>
-                          <?php    } else { ?>
-                            <option value="<?= $result['id'] ?>"><?= $result['name'] ?></option>
-                        <?php }} ?>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="text-sm">Pemeriksaan Lab <span class="text-warning">*</span></label>
-                      <select multiple="multiple" class="custom-select custom-select-sm" id="targetGenID" name="targetGenID[]" required>
-                        <option value="">--Pilih Pemeriksaan Lab--</option>
-                        <?php
-                          $query= "select * from master_pemeriksaan where status='1'";
-                          $resultTargetGen = mysqli_query($conn,$query);
-                            while($rowTargetGen = mysqli_fetch_array($resultTargetGen)){
-                            ?> 
-                        <option value="<?php echo $rowTargetGen["id"]; ?>"
-                            <?php
-                              if($rowTargetGen["id"] == $targetGenID){
-                                echo "selected";
-                              } ?>
-                              ><?php echo $rowTargetGen["name"]; ?></option><?php
-                              }
-                            ?>
-                      </select>
-                    </div>
-                  </div>
+                 </div>
                 </div>
                 <!-- Akhir Penambahan Transaksi Lab -->
                  <div class="row mt-5">
                   <div class="col-4">
                     <table class="table text-left ">
                       <tr>
-                        <th style="width:50%">Subtotal:</th>
+                        <th style="width:50%">Subtotal Covid:</th>
                         <td>Rp <span id="textprice"></span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th style="width:50%">Subtotal Lab:</th>
+                        <td>Rp <span id="labprice"></span>
                         </td>
                       </tr>
                       <tr>

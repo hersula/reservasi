@@ -677,6 +677,7 @@ function titleDocument($page, $name, $date_report, $date_dashboard_report, $date
       var valOutletID = $(".outletID option:selected").val();
       var valIdTindakan = document.getElementById('tindakanID').value;
       var valueTextPrice = document.getElementById('textprice');
+      var valueLabPrice = document.getElementById('labprice');
       var el1 = document.getElementById("textdiskon");
       var val = $("input[id='tax']").val() 
       var el2 = document.getElementById("diskon").val == '' ? '0' : document.getElementById("diskon");
@@ -693,12 +694,56 @@ function titleDocument($page, $name, $date_report, $date_dashboard_report, $date
         valueTextPrice.innerHTML = new Intl.NumberFormat('id-ID').format(data);
         var val2 = document.getElementById("textTax");
         var price = data;
+        var lab = valueLabPrice.value == '' ? '0' : valueLabPrice.value;
         var diskon = el2.value == '' ? '0' : el2.value;
         var tax = val == '' ? 0 : parseInt(val)/100;
-        var hasil = parseInt(price) + parseInt(price * tax) - parseInt(diskon);
+        var subtotal = parseInt(price) + parseInt(lab);
+        var hasil = subtotal + parseInt(price * tax) - parseInt(diskon);
         
         val2.innerHTML = !isNaN(parseInt(price * tax)) ? Intl.NumberFormat('id-ID').format(parseInt(price * tax)) : 0;
         
+        textHasil.innerHTML = !isNaN(hasil) ? new Intl.NumberFormat('id-ID').format(parseInt(hasil)) : new Intl.NumberFormat('id-ID').format(parseInt(data));
+      });
+
+    }
+
+    function getPrice() {
+      var valOutletID = $(".outletID option:selected").val();
+      var valIdTindakan = document.getElementById('targetGenID').value;
+      var valueTextPrice = document.getElementById('textprice').innerText;
+      var valPrice = valueTextPrice.replace(".", ""); 
+      var valueLabPrice = document.getElementById("labprice");
+      var valLab = valueLabPrice.innerText.replace(".", "");
+      var el1 = document.getElementById("textdiskon");
+      var val = $("input[id='tax']").val() ;
+      var el2 = document.getElementById("diskon").val == '' ? '0' : document.getElementById("diskon");
+      el1.innerHTML = new Intl.NumberFormat('id-ID').format(el2.value);
+      var textHasil = document.getElementById('texthasil');
+      $.ajax({
+        type: "POST",
+        url: "reservasi/get_total_price1.php",
+        data: {
+          tindakanID: valIdTindakan,
+          outletID: valOutletID
+        }
+      }).done(function(data) {
+        
+        var val2 = document.getElementById("textTax");
+        var price = data;
+        var tPrice = valPrice;
+        // var tLab = valLab;
+        var tLab = valLab == '' ? '0' : valLab;
+        var covid = new Intl.NumberFormat('id-ID').format(tPrice);
+        var lab = new Intl.NumberFormat('id-ID').format(tLab);
+        var diskon = el2.value == '' ? '0' : el2.value;
+        var tax = val == '' ? 0 : parseInt(val)/100;
+        var nPrice = parseInt(price) + parseInt(tLab);
+        var kumpul = parseInt(tPrice) + parseInt(price) + parseInt(tLab); 
+        var subtotal = parseInt(kumpul);
+        var hasil = subtotal + parseInt(price * tax) - parseInt(diskon);
+        
+        val2.innerHTML = !isNaN(parseInt(price * tax)) ? Intl.NumberFormat('id-ID').format(parseInt(price * tax)) : 0;
+        valueLabPrice.innerHTML = !isNaN(nPrice) ? new Intl.NumberFormat('id-ID').format(parseInt(nPrice)) : new Intl.NumberFormat('id-ID').format(parseInt(data));
         textHasil.innerHTML = !isNaN(hasil) ? new Intl.NumberFormat('id-ID').format(parseInt(hasil)) : new Intl.NumberFormat('id-ID').format(parseInt(data));
       });
 
