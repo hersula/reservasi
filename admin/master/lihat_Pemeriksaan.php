@@ -6,130 +6,105 @@ if (!$_SESSION['logged_on']) {
   header('location:index.php');
 }
 
-$kategori     ="";
-$name         ="";
+$id_tindakan   ="";
+$name         = "";
 $description  ="";
 $price        ="";
+$Kategori     ="";
+$katID        ="";
 $outlet       ="";
-$specimen     ="";
-//$discount     ="";
-$idPeriksa   ="";
-$outletPeriksa="";
+$outletTindakan="";
 $isVisibleToPasien="1";
-// $spesimen         ="";
+$spesimen         ="";
 
-$error            =0;
-//$errorName        =0;
-//$errorDescription =0;
+$error                =0;
+//$errorEmail         =0;
+//$errorPhone         =0;
 
-if(isset($_POST["simpan"])){
+if(isset($_GET["id"])){
+    $id_tindakan = $_GET["id"];
 
-    $kategori          = $_POST['kategori'];
-    $name              = $_POST["name"];
-    $description       = $_POST["description"];
-    $price             = $_POST["price"];
-    $outlet            = $_POST["outlet"];
-    //$discount          = $_POST["discount"];
-    $isVisibleToPasien = $_POST["isVisibleToPasien"];
-    $spesimen          = $_POST["spesimen"];
-  
-  //Pengecekan Error
-    /*
-  if($name == ""){
-    $error = 1;
-    $errorName = 1;
-  }else{
-    $sql = "select * from master_tindakan where name='$name' and status='Aktif'";
-    $cekData = mysqli_query($conn,$sql);
-    if(mysqli_num_rows($cekData) > 0){
-      $error = 1;
-      $errorName = 2;
-    }
-  }
+    $cekOutletPemeriksaanList1= "select * from outlet_pemeriksaan_list 
+                             where outletPemeriksaan='$id_tindakan'";
+    $cekHasilOTL1 = mysqli_query($conn,$cekOutletPemeriksaanList1);
 
-  if($description == ""){
-    $error = 1;
-    $errorDescription = 1;
-  }else{
-    $sql = "select * from master_tindakan where description='$description' and status='Aktif'";
-    $cekData = mysqli_query($conn,$sql);
-    if(mysqli_num_rows($cekData) > 0){
-      $error = 1;
-      $errorDescription = 2;
-    }
-  }
-*/
-
-    if($error == 0){
-        $sql1 = "insert into master_pemeriksaan (kategori, name, description, price, 
-                spesimen, status)
-                values ('$kategori', '$name', '$description', '$price[0]', '$spesimen', '1')";
-        mysqli_query($conn, $sql1);
-        
-        // query untuk get last id dari tabel master_tindakan
-        $result = mysqli_query($conn, "select id from master_pemeriksaan order by id 
-                  desc LIMIT 1");
- 
-        // tampilkan last id dari tabel master_tindakan
-        while ($row=mysqli_fetch_array($result,MYSQLI_ASSOC)){
-          echo $row['id'];
-          $outletPeriksa=$row["id"];
-
-        }   
-
-        //foreach ($_POST['outlet'] as $value) {
-        for ($i = 0; $i < count($outlet) - 1; $i++) {
-            $sql3= "insert into outlet_pemeriksaan_list (outletID, outletPemeriksaan, price,
-                      isVisibleToPasien, status) 
-                      values ('$outlet[$i]', '$outletPeriksa', '$price[$i]','$isVisibleToPasien', 'Aktif')";
-            mysqli_query($conn, $sql3);
-        }
-        
-        $sql_query1 = "insert into log_file (karyawanID, waktu, infoActivity) 
-                    values ('$_SESSION[idKaryawan]',NOW(),'Tambah data pemeriksaan') ";
-        mysqli_query($conn, $sql_query1);
-        
-        if (!empty($_GET['bug'])) {
-          echo "Sql 1 :".$sql1."</br>";
-          echo "Sql 2 :".$sql3."</br>";
-          echo "Sql 3 :".$sql_query1."</br>";
-          exit;
-        }
-
-        if(mysqli_error($conn) == "") {
-          echo '<script>
-                    swal({
-                    title: "Sukses!",
-                    text: "Data Pemeriksaan baru berhasil ditambahkan ke dalam sistem.",
-                    type: "success"
-                    }).then(function() {
-                    window.location = "admin.php?page=pemeriksaan-data";
-                    });
-                    </script>';
+    if(mysqli_num_rows($cekHasilOTL1) > 0) {
+        $sql = "select t.id, t.name, t.description, otl.price, k.id as katid, k.kat_pemeriksaan, t.spesimen, 
+                otl.outletID, otl.outletPemeriksaan,  otl.isVisibleToPasien 
+                from master_pemeriksaan t join outlet_pemeriksaan_list otl 
+                on otl.outletPemeriksaan=t.id join master_kat_pemeriksaan k on k.id=t.kategori where t.id='$id_tindakan'";
+        $result = mysqli_query($conn,$sql);
+        $count_tindakan = mysqli_num_rows($result);
+        if($row = mysqli_fetch_array($result)){
+          $id_tindakan  = $row["id"];
+          $name         = $row["name"];
+          $price        = $row["price"];
+          $description  = $row["description"];
+          $Kategori = $row["kat_pemeriksaan"];
+          $katID        = $row['katid'];
+          $outlet       = $row["outletID"];
+          $outletTindakan= $row["outletPemeriksaan"];
+          $isVisibleToPasien = $row["isVisibleToPasien"];
+          $spesimen          = $row["spesimen"];
         }else{
-          echo '<script>
+           echo '<script>
                     swal({
                     title: "Maaf!",
-                    text: "Data Pemeriksaan baru tidak berhasil ditambahkan ke dalam sistem.",
+                    text: "Data Pemeriksaan tidak berhasil diubah.",
                     type: "error"
                     }).then(function() {
                     window.location = "admin.php?page=pemeriksaan-data";
                     });
-                    </script>';
+                    </script>';  
+        }
+    }else{
+        $query1 = "select a.id, a.name, a.description, a.price, k.id as katid, a.spesimen from master_pemeriksaan a
+                    join master_kat_pemeriksaan k on k.id=a.kategori where a.id='$id_tindakan'";
+        $result1 = mysqli_query($conn,$query1);
+        if($row = mysqli_fetch_array($result1)){
+          $id_tindakan        = $row["id"];
+          $name               = $row["name"];
+          $description        = $row["description"];
+          $price              = $row["price"];
+          $katID              = $row["katid"];
+          $spesimen           = $row["spesimen"];
+
+        }else{
+            echo '<script>
+                  swal({
+                  title: "Maaf!",
+                  text: "Data Pemeriksaan tidak berhasil diubah.",
+                  type: "error"
+                  }).then(function() {
+                  window.location = "admin.php?page=pemeriksaan-data";
+                  });
+                  </script>';    
         }
 
     }
-
+    
+    $sql_query1 = "insert into log_file (karyawanID, waktu, infoActivity) 
+                    values ('$_SESSION[idKaryawan]',NOW(),'Lihat data pemeriksaan') ";
+    mysqli_query($conn, $sql_query1);
+}else{
+        echo '<script>
+                swal({
+                title: "Maaf!",
+                text: "Data Pemeriksaan tidak berhasil diubah.",
+                type: "error"
+                }).then(function() {
+                window.location = "admin.php?page=pemeriksaan-data";
+                });
+                </script>';   
 }
 ?>
-
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <div class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0">Tambah Data Pemeriksaan</h1>
+          <h1 class="m-0">Lihat Data Pemeriksaan</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
@@ -148,14 +123,14 @@ if(isset($_POST["simpan"])){
         <div class="col-md">
           <div class="card card-default">
             <div class="card-header">
-              <h3 class="card-title">Form Tambah Data Pemeriksaan</h3>
+              <h3 class="card-title">Form Lihat Data Pemeriksaan</h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
             <form action="" method="POST" enctype="multipart/form-data">
               <div class="card-body">
                 <div class="row">
-                  <div class="col-md-6">
+                <div class="col-md-6">
                     <div class="form-group">
                       <label class="text-sm">Kategori <span class="text-warning">*</span></label>
                       <select class="custom-select custom-select-sm" id="kategori" name="kategori" required>
@@ -167,7 +142,7 @@ if(isset($_POST["simpan"])){
                             ?> 
                         <option value="<?php echo $rowKat["id"]; ?>"
                             <?php
-                              if($rowKat["id"] == $kategori){
+                              if($rowKat["id"] == $katID){
                                 echo "selected";
                               } ?>
                               ><?php echo $rowKat["kat_pemeriksaan"]; ?></option><?php
@@ -176,11 +151,12 @@ if(isset($_POST["simpan"])){
                       </select>
                     </div>
                   </div>
-
                   <div class="col-md-6">
                     <div class="form-group ">
                       <label class="text-sm">Nama Pemeriksaan
+                      <!--
                       <span class="text-warning">*</span>
+                      -->
                       </label>
                       <span class="help-block">
                       <?php
@@ -191,10 +167,9 @@ if(isset($_POST["simpan"])){
                         */
                       ?>
                       </span>
-                      <input required type="text" class="form-control form-control-sm" name="name" placeholder="Nama Pemeriksaan" id="name" value="<?php echo $name; ?>" autocomplete="off">
+                      <input required type="text" class="form-control form-control-sm" name="name" placeholder="Nama Pemeriksaan" id="name" value="<?php echo $name; ?>" autocomplete="off" disabled="disabled">
                     </div>
-                  </div>
-                             
+                  </div>     
                 </div>
                 <!--end of row Nama Tindakan dan Jenis Tindakan -->
 
@@ -202,7 +177,9 @@ if(isset($_POST["simpan"])){
                   <div class="col-md-6">
                     <div class="form-group">
                       <label class="text-sm">Deskripsi 
+                      <!--
                        <span class="text-warning">*</span>
+                      -->
                       </label>
                       <span class="help-block">
                       <?php
@@ -213,7 +190,7 @@ if(isset($_POST["simpan"])){
                        */
                       ?>
                       </span>
-                         <input required type="text" class="form-control form-control-sm" name="description" placeholder="Deskripsi Pemeriksaan" id="description" value="<?php echo $description; ?>" autocomplete="off" >
+                         <input required type="text" class="form-control form-control-sm" name="description" placeholder="Deskripsi Pemeriksaan" id="description" value="<?php echo $description; ?>" autocomplete="off" disabled="disabled">
                     </div>
                   </div>
                   <!--end of col-md-6-->
@@ -221,12 +198,21 @@ if(isset($_POST["simpan"])){
                   <div class="col-md-6">
                     <div class="form-group">
                       <label class="text-sm">Jenis Spesimen
-                      <span class="text-warning">*</span></label>
+                      <!--
+                      <span class="text-warning">*</span>
+                     -->
+                     </label>
                       <select type="text" class="custom-select custom-select-sm" name="spesimen" 
-                      id="spesimen" required>
+                      id="spesimen" required disabled="disabled">
                         <option value="">--Pilih Spesimen--</option>
-                        <option value="darah">Darah</option>
-                        <option value="urine">Urine</option>
+                        <option value="darah" <?php
+                              if($spesimen == 'darah'){
+                                echo "selected";
+                              } ?> >Darah</option>
+                        <option value="urine" <?php
+                              if($spesimen == 'urine'){
+                                echo "selected";
+                              } ?> >Urine</option>
                       </select>
                     </div>
                   </div>
@@ -239,8 +225,12 @@ if(isset($_POST["simpan"])){
                 <div class="row fieldGroup">
                   <div class="col-md-3">
                     <div class="form-group">
-                      <label class="text-sm">Outlet <span class="text-warning">*</span></label>
-                      <select class="custom-select custom-select-sm" id="outlet" name="outlet[]" required>
+                      <label class="text-sm">Outlet 
+                        <!--
+                        <span class="text-warning">*</span>
+                        -->
+                      </label>
+                      <select class="custom-select custom-select-sm" id="outlet" name="outlet[]" required disabled="disabled">
                         <option value="">--Pilih Outlet--</option>
                         <?php
                           $query= "select * from master_outlet where status='Aktif'";
@@ -263,18 +253,13 @@ if(isset($_POST["simpan"])){
                   <div class="col-md-3">
                     <div class="form-group ">
                       <label class="text-sm">Harga Per Unit Di Outlet
+                      <!--
                       <span class="text-warning">*</span>
+                      --> 
                       </label>
-                      <input required type="text" class="form-control form-control-sm" name="price[]" placeholder="Harga Pemeriksaan Di Tiap Outlet" id="price" value="<?php echo $price; ?>" autocomplete="off" >
-                      <font color="blue">
-                        <b>Contoh: 75000
-                        </b>
-                      </font><br/>
+                      <input required type="text" class="form-control form-control-sm" name="price[]" placeholder="Harga Tindakan Di Tiap Outlet" id="price" value="<?php echo $price; ?>" autocomplete="off" disabled="disabled">
                     </div>
                   </div> 
-                  <div class="input-group-addon" style="margin-top:30px;"> 
-                    <a href="javascript:void(0)" class="btn btn-success addMore"><i class="fas fa-plus"></i></a>
-                  </div>
                 </div>
                 <!--end of row outlet dan Harga-->
                 <!--
@@ -283,12 +268,24 @@ if(isset($_POST["simpan"])){
                 </button>
                 -->
 
+                <?php
+
+                  $style = '';
+                  if ($count_tindakan > 1) {
+                    $style = '';
+
+                    while($rowTindakan = mysqli_fetch_array($result)){
+                ?>
                 <!--row outlet dan Harga -->
-                <div class="row fieldGroupCopy" style="display:none;">
+                <div class="row fieldGroupCopy" <?=$style?> >
                   <div class="col-md-3">
                     <div class="form-group">
-                      <label class="text-sm">Outlet <span class="text-warning">*</span></label>
-                      <select class="custom-select custom-select-sm" id="outlet" name="outlet[]">
+                      <label class="text-sm">Outlet 
+                        <!--
+                        <span class="text-warning">*</span>
+                        -->
+                      </label>
+                      <select class="custom-select custom-select-sm" id="outlet" name="outlet[]" disabled="disabled">
                         <option value="">--Pilih Outlet--</option>
                         <?php
                           $query= "select * from master_outlet where status='Aktif'";
@@ -297,7 +294,7 @@ if(isset($_POST["simpan"])){
                             ?> 
                         <option value="<?php echo $rowOutlet["id"]; ?>"
                             <?php
-                              if($rowOutlet["id"] == $outlet){
+                              if($rowTindakan["outletID"] == $rowOutlet['id']){
                                 echo "selected";
                               } ?>
                               ><?php echo $rowOutlet["name"]; ?></option><?php
@@ -311,21 +308,20 @@ if(isset($_POST["simpan"])){
                   <div class="col-md-3">
                     <div class="form-group ">
                       <label class="text-sm">Harga Per Unit Di Outlet
+                      <!--
                       <span class="text-warning">*</span>
+                      -->
                       </label>
-                      <input type="text" class="form-control form-control-sm" name="price[]" placeholder="Harga Tindakan Di Tiap Outlet" id="price" value="<?php echo $price; ?>" autocomplete="off" >
-                      <font color="blue">
-                        <b>Contoh: 75000
-                        </b>
-                      </font><br/>
+                      <input type="text" class="form-control form-control-sm" name="price[]" placeholder="Harga Tindakan Di Tiap Outlet" id="price" value="<?php echo $rowTindakan['price']; ?>" autocomplete="off" disabled="disabled">
                     </div>
                   </div> 
                   <br/>
-                  <div class="input-group-addon" style="margin-top:30px;"> 
-                    <a href="javascript:void(0)" class="btn btn-danger remove"><i class="fas fa-trash"></i></a>
-                </div>
                 </div>
                 <!--end of row outlet dan Harga-->
+                <?php
+                      }
+                    }
+                ?>
 
                 <br/>
                 <div class="row">
@@ -333,17 +329,19 @@ if(isset($_POST["simpan"])){
                     <div  class="form-group" >
                       <label class="text-sm">
                         Dapat dilihat pasien?
+                      <!--
                       <span class="text-warning">*</span>
+                    -->
                       </label>
                       <div class="col-sm-6">
                         <div class="form-check-inline">
                           <label class="form-check-label" for="rbYa">
-                          <input type="radio" class="form-check-input" id="isVisibleToPasien" name="isVisibleToPasien" <?php if($isVisibleToPasien == "1") { echo "checked"; } ?> value="1">Ya
+                          <input type="radio" class="form-check-input" id="isVisibleToPasien" disabled="disabled" name="isVisibleToPasien" <?php if($isVisibleToPasien == "1") { echo "checked"; } ?> value="1">Ya
                           </label>
                         </div>
                         <div class="form-check-inline">
                           <label class="form-check-label" for="rbTidak">
-                          <input type="radio" class="form-check-input" id="isVisibleToPasien" 
+                          <input type="radio" class="form-check-input" disabled="disabled" id="isVisibleToPasien" 
                           name="isVisibleToPasien"
                           <?php if($isVisibleToPasien == "0") { echo "checked"; } ?> value="0">Tidak
                           </label>
@@ -358,7 +356,7 @@ if(isset($_POST["simpan"])){
               </div>
               <!-- /.card-body -->
               <div class="card-footer">
-                <button type="submit" name="simpan" value="simpan" class="btn btn-success btn-sm"><i class="far fa-save"> Simpan</i></button>
+                <!-- <button type="submit" name="simpan" value="simpan" class="btn btn-success btn-sm"><i class="far fa-save"> Simpan</i></button> -->
                 <a class="btn btn-secondary btn-sm" href="admin.php?page=pemeriksaan-data"><i class="fas fa-arrow-left"> Kembali</i></a>
               </div>
             </form>

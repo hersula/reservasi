@@ -40,7 +40,7 @@
                 <tbody>
                   <?php
                     $no=0;
-                    $sql = "select k.kat_pemeriksaan, p.name, p.description from master_pemeriksaan p
+                    $sql = "select p.id, k.kat_pemeriksaan, p.name, p.description from master_pemeriksaan p
                     left join master_kat_pemeriksaan k on k.id = p.kategori where p.status='1'";
                     $result = mysqli_query($conn, $sql);
                     while ($row = mysqli_fetch_array($result)) {
