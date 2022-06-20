@@ -213,7 +213,7 @@ if($isFaskes['isFaskes'] == '1' || in_array("Faskes", $arrayRoleName)) {
                   <div class="col-md-6">
                     <div class="form-group">
                       <label class="text-sm">Pemeriksaan Lab <span class="text-warning">*</span></label>
-                      <select multiple="multiple" class="custom-select custom-select-sm" id="targetGenID" name="targetGenID[]" required onchange="getPrice()">
+                      <select multiple="multiple" class="custom-select custom-select-sm" id="targetGenID" name="targetGenID[]" onchange="getPrice()">
                         <option value="">--Pilih Pemeriksaan Lab--</option>
                         <?php
                           $query= "select * from master_pemeriksaan where status='1'";

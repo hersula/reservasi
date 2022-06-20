@@ -80,13 +80,19 @@ function insert_transaction($idTransaction, $pasienID, $tindakanID, $outletID, $
 {
     // Access the global $conn variable
     Global $conn;
-    
+    $tglTindakan        = date('Y-m-d');
+    // Insert Header
+    $query_insert = $conn->query("INSERT INTO transaksi_rawat_jalan_h (id, transaksiID, tglTindakan, pasienID, outletID, grandtotal, status, created_date, created_by)
+    values(null, '$idTransaction', '$tglTindakan', '$pasienID', '$outletID', $grandTotal, '1', NOW(), $karyawanID)") or die($conn->error);
+    // mysqli_query($conn, $sql_header);
+
+    // $price tindakan
     $query_select_price = $conn->query("SELECT price FROM outlet_tindakan_list WHERE outletTindakan='$tindakanID' AND outletID='$outletID'");
     $fetchPrice         = $query_select_price->fetch_array();
     $price              = $fetchPrice['price'];
-
-    $tglTindakan        = date('Y-m-d');
-
+    
+    
+    
     if($paymentType == '5' || $paymentType == '7') {
         if($typeTindakan == 'Non Result') {
             $query_insert = $conn->query("INSERT INTO transaksi_rawat_jalan (id, transaksiID, barcodeLab, softDeleteBarcode, pasienID, tindakanID, outletID, targetGenID, price, totalDisc, Tax, grandTotal, nikAccount, gejala, deskripsiGejala, tglTindakan, paymentType, paymentURL, billTo, status, createdFrom, deletedFrom, confirmPaymentFrom, confirmGetSample, createdAt, 	deletedAt, sampleTime, barcodeLabTime, resultTime, isSelfRegister)
@@ -106,6 +112,16 @@ function insert_transaction($idTransaction, $pasienID, $tindakanID, $outletID, $
         
     }
 
+    foreach ($_POST['targetGenID'] as $value) {
+        $query_select_price = $conn->query("SELECT price FROM outlet_pemeriksaan_list WHERE outletPemeriksaan='$value' AND outletID='$outletID'");
+        $fetchPrice         = $query_select_price->fetch_array();
+        $nprice              = $fetchPrice['price'];
+        
+        $query_insert = $conn->query("insert into transaksi_rawat_jalan (id, transaksiID, barcodeLab, softDeleteBarcode, pasienID, targetGenID, outletID, price, totalDisc, Tax, grandTotal, nikAccount, gejala, deskripsiGejala, tglTindakan, paymentType, paymentURL, billTo, status, createdFrom, deletedFrom, confirmPaymentFrom, confirmGetSample, createdAt, 	deletedAt, sampleTime, barcodeLabTime, resultTime, isSelfRegister)
+        VALUES (null, '$idTransaction', 'Belum dibarcode', null, '$pasienID', '$value', '$outletID', '$price', $discount, $tax, $grandTotal, null, '$gejala', '$deskripsiGejala', '$tglTindakan', $paymentType, null, '$billTo', 'Open', $karyawanID, null, null, null, NOW(), null, null, null, null, 0)") or die($conn->error);
+        // mysqli_query($conn, $sql);
+    }
+    
     if ($query_insert) {
         # code...
         return true;
@@ -113,6 +129,9 @@ function insert_transaction($idTransaction, $pasienID, $tindakanID, $outletID, $
         # code...
         return false;
     }
+    
+    
+    
 }
 
 function insert_pasien($nik, $name, $passport, $phone, $isWNA, $country, $gender, $address, $placeOfBirth, $dateOfBirth)
