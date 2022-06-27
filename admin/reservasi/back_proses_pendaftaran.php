@@ -82,9 +82,7 @@ function insert_transaction($idTransaction, $pasienID, $tindakanID, $outletID, $
     Global $conn;
     $tglTindakan        = date('Y-m-d');
     // Insert Header
-    $query_insert = $conn->query("INSERT INTO transaksi_rawat_jalan_h (id, transaksiID, tglTindakan, pasienID, outletID, grandtotal, status, created_date, created_by)
-    values(null, '$idTransaction', '$tglTindakan', '$pasienID', '$outletID', $grandTotal, '1', NOW(), $karyawanID)") or die($conn->error);
-    // mysqli_query($conn, $sql_header);
+    
 
     // $price tindakan
     $query_select_price = $conn->query("SELECT price FROM outlet_tindakan_list WHERE outletTindakan='$tindakanID' AND outletID='$outletID'");
@@ -112,15 +110,22 @@ function insert_transaction($idTransaction, $pasienID, $tindakanID, $outletID, $
         
     }
 
+    $gtotal = 0;
+    $harga = 0;
     foreach ($_POST['targetGenID'] as $value) {
         $query_select_price = $conn->query("SELECT price FROM outlet_pemeriksaan_list WHERE outletPemeriksaan='$value' AND outletID='$outletID'");
         $fetchPrice         = $query_select_price->fetch_array();
-        $nprice              = $fetchPrice['price'];
+        $nprice             = $fetchPrice['price'];
+        $gtotal             = $gtotal + $nprice;
         
         $query_insert = $conn->query("insert into transaksi_rawat_jalan (id, transaksiID, barcodeLab, softDeleteBarcode, pasienID, targetGenID, outletID, price, totalDisc, Tax, grandTotal, nikAccount, gejala, deskripsiGejala, tglTindakan, paymentType, paymentURL, billTo, status, createdFrom, deletedFrom, confirmPaymentFrom, confirmGetSample, createdAt, 	deletedAt, sampleTime, barcodeLabTime, resultTime, isSelfRegister)
-        VALUES (null, '$idTransaction', 'Belum dibarcode', null, '$pasienID', '$value', '$outletID', '$price', $discount, $tax, $grandTotal, null, '$gejala', '$deskripsiGejala', '$tglTindakan', $paymentType, null, '$billTo', 'Open', $karyawanID, null, null, null, NOW(), null, null, null, null, 0)") or die($conn->error);
+        VALUES (null, '$idTransaction', 'Belum dibarcode', null, '$pasienID', '$value', '$outletID', '$nprice', $discount, $tax, $gtotal, null, '$gejala', '$deskripsiGejala', '$tglTindakan', $paymentType, null, '$billTo', 'Open', $karyawanID, null, null, null, NOW(), null, null, null, null, 0)") or die($conn->error);
         // mysqli_query($conn, $sql);
     }
+    $grandTotal = $grandTotal + $gtotal;
+
+    $query_insert = $conn->query("INSERT INTO transaksi_rawat_jalan_h (id, transaksiID, tglTindakan, pasienID, outletID, grandtotal, paymentType, paymentURL, billTo, status, created_date, created_by)
+    values(null, '$idTransaction', '$tglTindakan', '$pasienID', '$outletID', $grandTotal, $paymentType, null, '$billTo', 'Close', NOW(), $karyawanID)") or die($conn->error);
     
     if ($query_insert) {
         # code...

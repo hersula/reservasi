@@ -1,0 +1,5 @@
+- hasil lab di inout pada menu laboratorium - Hasil Lab
+- server side req
+- search pasien di form pendaftaran (pop up)
+- tabel IDTindakan dan IDPemeriksaan di satuin (jd 1 table)
+- 

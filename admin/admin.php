@@ -710,6 +710,7 @@ function titleDocument($page, $name, $date_report, $date_dashboard_report, $date
     function getPrice() {
       var valOutletID = $(".outletID option:selected").val();
       var valIdTindakan = document.getElementById('targetGenID').value;
+      // var valIDTindakan = document.getElementById(".targetGenID option:selected").value;
       var valueTextPrice = document.getElementById('textprice').innerText;
       var valPrice = valueTextPrice.replace(".", ""); 
       var valueLabPrice = document.getElementById("labprice");

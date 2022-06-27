@@ -42,11 +42,10 @@
                 </thead>
                 <tbody>
                   <?php
-                    $no=0;
-                    $sql = "select * from master_tindakan where status='Aktif'";
+                    $sql = "select * from master_tindakan where status='Aktif' order by id";
                     $result = mysqli_query($conn, $sql);
-                    while ($row = mysqli_fetch_array($result)) {
-                      $no++;
+                    while ($row = mysqli_fetch_array($result)) {       
+                      $no = $row['id'];               
                   ?>
                     <tr>
                      <td style="text-align:center;"><?php echo $no ?></td>
@@ -57,8 +56,7 @@
                       -->
                       <td><?php echo $row["typeTindakan"]; ?></td>
                 
-                      <td align="center">
-                        
+                      <td align="center">                        
                         <a href="admin.php?page=lihat-tindakan-data&id=<?php echo $row["id"]; ?>" class="btn btn-info btn-xs" title="Lihat Data"> <i class="fas fa-eye"></i>
                         </a>
                         <a href="admin.php?page=ubah-tindakan-data&id=<?php echo $row["id"]; ?>" class="btn btn-warning btn-xs" title="Ubah Data">
@@ -67,8 +65,9 @@
                         <a href="admin.php?page=hapus-tindakan-data&id=<?php echo $row["id"]; ?>" class="btn btn-danger btn-xs" title="Hapus Data" onclick="return confirm('Data akan dihapus? Jika Tindakan ini dihapus, maka Tindakan ini di semua outlet tidak tampil.')"><i class="fas fa-trash"></i>
                         </a>
                       </td>
-                    </tr>
+                    </tr>                      
                   <?php
+                  // $no++;
                   }
 
                   ?>

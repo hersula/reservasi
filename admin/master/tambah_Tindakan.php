@@ -34,32 +34,32 @@ if(isset($_POST["simpan"])){
     $spesimen          = $_POST["spesimen"];
   
   //Pengecekan Error
-    /*
-  if($name == ""){
-    $error = 1;
-    $errorName = 1;
-  }else{
-    $sql = "select * from master_tindakan where name='$name' and status='Aktif'";
-    $cekData = mysqli_query($conn,$sql);
-    if(mysqli_num_rows($cekData) > 0){
-      $error = 1;
-      $errorName = 2;
-    }
-  }
+  
+  // if($name == ""){
+  //   $error = 1;
+  //   $errorName = 1;
+  // }else{
+  //   $sql = "select * from master_tindakan where name='$name' and status='Aktif'";
+  //   $cekData = mysqli_query($conn,$sql);
+  //   if(mysqli_num_rows($cekData) > 0){
+  //     $error = 1;
+  //     $errorName = 2;
+  //   }
+  // }
 
-  if($description == ""){
-    $error = 1;
-    $errorDescription = 1;
-  }else{
-    $sql = "select * from master_tindakan where description='$description' and status='Aktif'";
-    $cekData = mysqli_query($conn,$sql);
-    if(mysqli_num_rows($cekData) > 0){
-      $error = 1;
-      $errorDescription = 2;
-    }
-  }
-*/
+  // if($description == ""){
+  //   $error = 1;
+  //   $errorDescription = 1;
+  // }else{
+  //   $sql = "select * from master_tindakan where description='$description' and status='Aktif'";
+  //   $cekData = mysqli_query($conn,$sql);
+  //   if(mysqli_num_rows($cekData) > 0){
+  //     $error = 1;
+  //     $errorDescription = 2;
+  //   }
+  // }
 
+    echo $name;
     if($error == 0){
         $sql1 = "insert into master_tindakan (name, description, price, typeTindakan,
                 spesimen, status, createdAt)
@@ -184,6 +184,7 @@ if(isset($_POST["simpan"])){
                         <option value="">--Pilih Jenis Tindakan--</option>
                         <option value="PCR">PCR</option>
                         <option value="Antigen">Antigen</option>
+                        <option value="LAB">LAB</option>
                         <option value="Non Result">Non Result</optioNon Resultn>
                       </select>
                     </div>
@@ -225,6 +226,8 @@ if(isset($_POST["simpan"])){
                         <option value="nasopharyngeal & oropharyngeal">nasopharyngeal & oropharyngeal
                         </option>
                         <option value="oropharyngeal">oropharyngeal</option>
+                        <option value="darah">Darah</option>
+                        <option value="urine">Urine</option>
                       </select>
                     </div>
                   </div>

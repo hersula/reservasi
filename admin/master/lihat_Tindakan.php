@@ -166,6 +166,10 @@ if(isset($_GET["id"])){
                               if($typeTindakan == 'Antigen'){
                                 echo "selected";
                               } ?> >Antigen</option>
+                        <option value="LAB" <?php
+                              if($typeTindakan == 'LAB'){
+                                echo "selected";
+                              } ?> >LAB</option>
                       </select>
                     </div>
                   </div>
@@ -223,6 +227,14 @@ if(isset($_GET["id"])){
                               if($spesimen == 'oropharyngeal'){
                                 echo "selected";
                               } ?> >oropharyngeal</option>
+                        <option value="darah" <?php
+                              if($spesimen == 'darah'){
+                                echo "selected";
+                              } ?> >Darah</option>
+                        <option value="urine" <?php
+                              if($spesimen == 'urine'){
+                                echo "selected";
+                              } ?> >Urine</option>
                       </select>
                     </div>
                   </div>

@@ -265,6 +265,10 @@ if (isset($_POST['delete'])) {
                               if($typeTindakan == 'Antigen'){
                                 echo "selected";
                               } ?> >Antigen</option>
+                        <option value="LAB" <?php
+                              if($typeTindakan == 'LAB'){
+                                echo "selected";
+                              } ?> >LAB</option>
                         <option value="Non Result" <?php
                               if($typeTindakan == 'Non Result'){
                                 echo "selected";
@@ -321,6 +325,14 @@ if (isset($_POST['delete'])) {
                               if($spesimen == 'oropharyngeal'){
                                 echo "selected";
                               } ?> >oropharyngeal</option>
+                        <option value="darah" <?php
+                              if($spesimen == 'darah'){
+                                echo "selected";
+                              } ?> >Darah</option>
+                        <option value="urine" <?php
+                              if($spesimen == 'urine'){
+                                echo "selected";
+                              } ?> >Urine</option>
                       </select>
                     </div>
                   </div>
