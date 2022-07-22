@@ -10,6 +10,10 @@ if (isset($_POST['submit'])) {
     $date_filter = isset($_POST['date_filter']) ? $_POST['date_filter'] : '';
     $date_filter2 = isset($_POST['date_filter2']) ? $_POST['date_filter2'] : '';
 
+} else {
+    $outlet_selected = 0;
+    $date_filter = date('Y-m-d');
+    $date_filter2 = date('Y-m-d');
 }
 
 $access_control = '';

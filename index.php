@@ -26,6 +26,29 @@ if ($logged_on == true) {
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="icon" href="images/LogoNorbuMedika.png" type="image/png">
 
+  <!-- tambahan modal -->
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+      <script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+
+      <script>
+        $(document).ready(function() {
+            //focusin berfungsi ketika cursor berada di dalam textbox modal langsung aktif
+            $(".pencarian").focusin(function() {
+              $("#myModal").modal('show'); // ini fungsi untuk menampilkan modal
+            });
+            $('#example').DataTable(); // fungsi ini untuk memanggil datatable
+          });
+          
+          // function in berfungsi untuk memindahkan data kolom yang di klik menuju text box
+          function masuk(txt, data) {
+            document.getElementById('nik').value = data; // ini berfungsi mengisi value  yang ber id textbox
+            $("#myModal").modal('hide'); // ini berfungsi untuk menyembunyikan modal
+          }
+    </script>
 </head>
 
 <body style="background-color: #17AE9D;">

@@ -62,6 +62,9 @@
                         <a href="admin.php?page=ubah-tindakan-data&id=<?php echo $row["id"]; ?>" class="btn btn-warning btn-xs" title="Ubah Data">
                           <i class="fas fa-edit"></i>
                         </a>
+                        <!-- <a href="admin.php?page=parameter-tindakan-data&id=<?php echo $row["id"]; ?>" class="btn btn-primary btn-xs" title="Parameter Data">
+                          <i class="fas fa-thumbtack" aria-hidden="true"></i>
+                        </a> -->
                         <a href="admin.php?page=hapus-tindakan-data&id=<?php echo $row["id"]; ?>" class="btn btn-danger btn-xs" title="Hapus Data" onclick="return confirm('Data akan dihapus? Jika Tindakan ini dihapus, maka Tindakan ini di semua outlet tidak tampil.')"><i class="fas fa-trash"></i>
                         </a>
                       </td>

@@ -192,8 +192,16 @@ $arrayRoleName = $_SESSION['rolesName'];
                     <p class="text-sm">Tindakan</p>
                 </a>
               </li>
-
+              
               <li class="nav-item">
+                <a href="admin.php?page=parameter-data" class="nav-link <?php if ($_GET['page'] == 'parameter-data') {
+                                                                        echo 'active';
+                                                                      } ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                    <p class="text-sm">Parameter</p>
+                </a>
+              </li>
+              <!-- <li class="nav-item">
                 <a href="admin.php?page=kategori-data" class="nav-link <?php if ($_GET['page'] == 'kategori-data') {
                                                                         echo 'active';
                                                                       } ?>">
@@ -209,7 +217,7 @@ $arrayRoleName = $_SESSION['rolesName'];
                   <i class="far fa-circle nav-icon"></i>
                     <p class="text-sm">Pemeriksaan</p>
                 </a>
-              </li>
+              </li> -->
             
               <li class="nav-item">
                 <a href="admin.php?page=master-pasien-data" class="nav-link <?php if ($_GET['page'] == 'master-pasien-data') {

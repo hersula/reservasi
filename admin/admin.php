@@ -355,7 +355,8 @@ function titleDocument($page, $name, $date_report, $date_dashboard_report, $date
           include "reservasi/Pendaftaran_Tes.php";
           break;
         case 'reservation':
-          include "reservasi/tambah_Pendaftaran_Tes.php";
+          // include "reservasi/tambah_Pendaftaran_Tes.php";
+          include "reservasi/tambah_Pendaftaran_New.php";
           break;
         case 'sample-lab':
           include "laboratorium/sample_lab.php";
@@ -398,6 +399,18 @@ function titleDocument($page, $name, $date_report, $date_dashboard_report, $date
           break;
         case 'pemeriksaan-kategori':
           include "master/Tindakan.php";
+          break;
+        case 'parameter-data':
+          include "master/Parameter_Lab.php";
+          break;
+        case 'tambah-parameter-data':
+          include "master/tambah_Parameter.php";
+          break;
+        case 'ubah-parameter-data':
+          include "master/ubah_Parameter.php";
+          break;
+        case 'lihat-parameter-data':
+          include "master/lihat_Parameter.php";
           break;
         default:
           echo "<center><h3>Maaf. Halaman tidak di temukan !</h3></center>";
